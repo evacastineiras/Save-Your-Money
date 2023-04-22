@@ -1,15 +1,13 @@
 const express = require("express")
+const { verifyToken } = require("../middleware/authJWT");
 const router = express.Router()
 const User = require("../controllers/user.controller.js");
 
-router.post("/create", User.createUser);
-        
-router.get("/get-all", User.findAllUsers);
+      
+router.get("/user/:userId",[verifyToken], User.findOneUser);
 
-router.get("/user/:userId", User.findOneUser);
+router.put("/user/:userId",[verifyToken], User.updateUser);
 
-router.put("/user/:userId", User.updateUser);
-
-router.delete("/user/:userId", User.deleteUser);
+router.delete("/user/:userId",[verifyToken], User.deleteUser);
 
 module.exports = router;

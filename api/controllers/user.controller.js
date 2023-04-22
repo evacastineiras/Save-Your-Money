@@ -1,31 +1,5 @@
 const User = require("../models/user.model.js");
 
-// Create and Save a new User
-exports.createUser = (req, res) => {
-  const user = new User({
-    username: req.body.username,
-    name: req.body.name,
-    lastname: req.body.lastname,
-    password: req.body.password,
-    email: req.body.email,
-    photo: req.body.photo,
-    creationDate: Date, default: Date.now(),
-    country: req.body.country,
-    active: 1
-  });
-  user
-    .save()
-    .then((data) => {
-      res.send(data);
-    })
-    .catch((err) => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while creating the User.",
-      });
-    });
-};
-
 // Retrieve all users from the database.
 exports.findAllUsers = (req, res) => {
   User.find()

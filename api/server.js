@@ -7,6 +7,7 @@ dotenv.config();
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const cookieSession = require("cookie-session");
 
 
 // Set `strictQuery: false` to globally opt into filtering by properties that aren't in the schema
@@ -23,8 +24,22 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 app.use(cors({
-  origin: '*'
+  origin: 'http://localhost:8081'
 }));
+
+// parse requests of content-type - application/json
+app.use(express.json());
+
+// parse requests of content-type - application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
+
+app.use(
+  cookieSession({
+    name: "bezkoder-session",
+    secret: "COOKIE_SECRET", // should use as secret environment variable
+    httpOnly: true
+  })
+);
 
 const spentRouter = require("./routes/spent.routes.js")
 const userRouter = require("./routes/user.routes.js")

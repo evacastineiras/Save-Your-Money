@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const userSchema = Schema({
+const userSchema = new Schema({
   _id : Schema.Types.ObjectId,
   username: String,
   name: String,
@@ -10,8 +10,7 @@ const userSchema = Schema({
   password: String,
   email: String,
   photo: String,
-  creationDate: Date, default: Date.now(),
-/*   country: [{ type: Schema.Types.ObjectId, ref: "Country" }],*/  
+  creationDate: {type: Date, default: Date.now },
   country: String,
   active: Boolean
 });
