@@ -28,7 +28,6 @@ export class DashboardManagementComponent implements OnInit{
   }
 
   menuToggle(){
-
     this.varToggle = !this.varToggle;
   }
 }
