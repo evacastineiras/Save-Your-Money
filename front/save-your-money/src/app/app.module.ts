@@ -19,6 +19,8 @@ import { LanguageComponent } from './shared/components/language/language.compone
 import { LandingComponent } from './pages/landing/landing.component';
 import { ForgotComponent } from './pages/forgot/forgot.component';
 import { LandingPageComponent } from './pages/landing/landing-page/landing-page.component';
+import { httpInterceptorProviders } from './helpers/http.interceptor'; 
+import { FormsModule }   from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { LandingPageComponent } from './pages/landing/landing-page/landing-page.
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     RouterModule.forRoot([
       {path: 'register', component: RegisterComponent},
@@ -53,7 +56,7 @@ import { LandingPageComponent } from './pages/landing/landing-page/landing-page.
         }
     })
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
