@@ -1,4 +1,5 @@
 <div class="gen-container">
-    <app-dashboard-management></app-dashboard-management>
+    <app-landing *ngIf="!isLoggedIn"></app-landing>
+    <app-dashboard-management *ngIf="isLoggedIn" (onLoginParent)="changeLoginParent($event)"></app-dashboard-management>
 </div>
 

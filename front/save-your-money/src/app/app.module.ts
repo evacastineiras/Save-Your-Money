@@ -45,7 +45,7 @@ import { FormsModule }   from '@angular/forms';
       {path: 'login', component: LoginComponent},
       {path: 'forgot', component: ForgotComponent},
       {path: 'landing', component: LandingComponent},
-      {path: '', redirectTo: '/home', pathMatch: 'full'},
+      {path: '', redirectTo: '/', pathMatch: 'full'},
     ]),
     HttpClientModule,
     TranslateModule.forRoot({

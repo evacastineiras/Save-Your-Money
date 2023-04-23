@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-landing',
@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./landing.component.css']
 })
 export class LandingComponent {
+  isLoggedIn = false
+  @Output() onLoginParent = new EventEmitter<any>();
 
   public switchValue : any = "0"
 
@@ -13,6 +15,12 @@ export class LandingComponent {
     this.switchValue = value;
   }
 
-
+  changeLogin(val: any) {
+    this.isLoggedIn = true;
+    this.setLoginParent()
+  }
+  setLoginParent(){
+    this.onLoginParent.emit(true);
+ }
   
 }

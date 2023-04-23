@@ -21,6 +21,8 @@ export class LoginComponent implements OnInit{
 
   constructor(private authService: AuthService, private storageService: StorageService) { }
 
+  @Output() onLogin = new EventEmitter<boolean>();
+
   ngOnInit(): void {
     if (this.storageService.isLoggedIn()) {
       this.isLoggedIn = true;
@@ -36,6 +38,7 @@ export class LoginComponent implements OnInit{
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;
+        this.setLogin()
       },
       error: err => {
         this.errorMessage = err.error.message;
@@ -43,6 +46,9 @@ export class LoginComponent implements OnInit{
       }
     });
   }
+    setLogin(){
+       this.onLogin.emit(true);
+    }
 
 
   sendToParent(valueToSend : any){
