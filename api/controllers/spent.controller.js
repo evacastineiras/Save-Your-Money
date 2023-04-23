@@ -1,4 +1,5 @@
 const Spent = require("../models/spent.model.js");
+const ObjectId = require('mongoose').Types.ObjectId;
 
 // Create and Save a new Spent
 exports.createSpent = (req, res) => {
@@ -24,8 +25,9 @@ exports.createSpent = (req, res) => {
 
 // Retrieve all spents from the database.
 exports.findAllSpents = (req, res) => {
-  console.log(req)
-  Spent.find({ "spents.owner": req.email })
+  let owner_id = new ObjectId(req.userId);
+  console.log(req.userId)
+  Spent.find({ "owner": owner_id })
     .then((data) => {
       res.send(data);
     })
