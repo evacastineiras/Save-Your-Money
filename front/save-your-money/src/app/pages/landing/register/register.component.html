@@ -1,5 +1,9 @@
 <div class="main-page">
-    <form id="formulario" method="post" action="/register">
+    <form id="formulario" *ngIf="!isSuccessful"
+    name="form"
+    (ngSubmit)="f.form.valid && onSubmit()"
+    #f="ngForm"
+    novalidate>
     <div class="arrow-div">
         <a><span (click)="sendToParent(0)" class="material-symbols-rounded">arrow_back</span></a>
     </div>
@@ -10,21 +14,21 @@
             <div class="name-div">
                 <div class="container" id="input-nombre">      
                     <div class="webflow-style-input">
-                      <input name="nombre" class="username" type="text" placeholder="Full name">
+                      <input name="fullname" class="username" minlength="3" type="text" maxlength="20" [(ngModel)]="form.fullname" placeholder="Full name" required>
                     </div>
                   </div> 
             </div>
             <div class="email-div">
                 <div class="container" id="input-email">      
                     <div class="webflow-style-input">
-                      <input  name="email" class="email" type="email" placeholder="Email">
+                      <input  name="email" class="email" type="email" placeholder="Email" #email="ngModel" [(ngModel)]="form.email" required>
                     </div>
                   </div> 
             </div>
             <div class="password-div">
                 <div class="container" id="input-password">      
                     <div class="webflow-style-input">
-                      <input  name="password" class="password" type="password" placeholder="Password">
+                      <input  name="password" class="password" type="password" minlength="6" #password="ngModel" [(ngModel)]="form.password" placeholder="Password">
                     </div>
                   </div> 
             </div>

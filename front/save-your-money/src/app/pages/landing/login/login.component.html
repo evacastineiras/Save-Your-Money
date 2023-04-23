@@ -1,5 +1,5 @@
 <div class="main-page">
-    <form method="post" action="/login" id="formulario">
+    <form *ngIf="!isLoggedIn" name="form" id="formulario" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
     <div class="arrow-div">
         <a><span (click)="sendToParent(0)"class="material-symbols-rounded">arrow_back</span></a>
     </div>
@@ -10,14 +10,14 @@
             <div class="email-div">
                 <div class="container">      
                     <div class="webflow-style-input">
-                      <input name="email" class="email" type="email" placeholder="Email">
+                      <input name="email" class="email" type="email" placeholder="Email" [(ngModel)]="form.email" #email="ngModel" required>
                     </div>
                   </div> 
             </div>
             <div class="password-div">
                 <div class="container">      
                     <div class="webflow-style-input">
-                      <input name="password" class="password" type="password" placeholder="Password">
+                      <input name="password" class="password" type="password" placeholder="Password" [(ngModel)]="form.password" minlength="6" #password="ngModel" required>
                     </div>
                   </div> 
             </div>

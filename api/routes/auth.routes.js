@@ -14,7 +14,6 @@ module.exports = function(app) {
     "/auth/signup",
     [
       verifySignUp.checkDuplicateUsernameOrEmail,
-      verifySignUp.checkRolesExisted
     ],
     controller.signup
   );

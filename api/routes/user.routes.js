@@ -4,7 +4,7 @@ const router = express.Router()
 const User = require("../controllers/user.controller.js");
 
       
-router.get("/user/:userId",[verifyToken], User.findOneUser);
+router.get("/user",[verifyToken], User.findOneUser);
 
 router.put("/user/:userId",[verifyToken], User.updateUser);
 

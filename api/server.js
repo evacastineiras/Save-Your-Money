@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 app.use(cors({
-  origin: 'http://localhost:8081'
+  origin: 'http://localhost:4200',credentials: true
 }));
 
 // parse requests of content-type - application/json
@@ -35,7 +35,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cookieSession({
-    name: "bezkoder-session",
+    name: "juanma-session",
     secret: "COOKIE_SECRET", // should use as secret environment variable
     httpOnly: true
   })
@@ -46,9 +46,11 @@ const userRouter = require("./routes/user.routes.js")
 
 
 /* ROUTING */
+require('./routes/auth.routes.js')(app);
 
 app.use(process.env.VERSION, spentRouter)
 app.use(process.env.VERSION, userRouter)
+
 
 
 // Define the database URL to connect to.

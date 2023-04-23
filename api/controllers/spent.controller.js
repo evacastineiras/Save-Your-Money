@@ -24,7 +24,8 @@ exports.createSpent = (req, res) => {
 
 // Retrieve all spents from the database.
 exports.findAllSpents = (req, res) => {
-  Spent.find()
+  console.log(req)
+  Spent.find({ "spents.owner": req.email })
     .then((data) => {
       res.send(data);
     })
