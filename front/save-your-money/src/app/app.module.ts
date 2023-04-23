@@ -22,6 +22,8 @@ import { LandingPageComponent } from './pages/landing/landing-page/landing-page.
 import { DashboardManagementComponent } from './pages/dashboard-management/dashboard-management.component';
 import { httpInterceptorProviders } from './helpers/http.interceptor'; 
 import { FormsModule }   from '@angular/forms';
+import { DashboardBoxesComponent } from './pages/dashboard-management/dashboard-boxes/dashboard-boxes.component';
+import { ProfileComponent } from './pages/dashboard-management/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { FormsModule }   from '@angular/forms';
     LandingComponent,
     ForgotComponent,
     LandingPageComponent,
-    DashboardManagementComponent
+    DashboardManagementComponent,
+    DashboardBoxesComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

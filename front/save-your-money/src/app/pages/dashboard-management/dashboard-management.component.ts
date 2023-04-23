@@ -8,6 +8,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class DashboardManagementComponent implements OnInit{
   content?: string;
+  public varToggle : boolean = false;
 
   constructor(private userService: UserService) { }
 
@@ -24,5 +25,10 @@ export class DashboardManagementComponent implements OnInit{
         }
       }
     });
+  }
+
+  menuToggle(){
+
+    this.varToggle = !this.varToggle;
   }
 }
