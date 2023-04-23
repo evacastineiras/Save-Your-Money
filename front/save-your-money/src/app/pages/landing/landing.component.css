@@ -1,0 +1,22 @@
+.gen-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 37% 26% 37% ;
+    grid-template-rows: 18% 64% 18%;
+    overflow-x: hidden;
+}
+
+.language-container {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.box-container{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start:2;
+    grid-row-end: 3;
+}

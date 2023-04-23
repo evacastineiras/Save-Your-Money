@@ -1,0 +1,26 @@
+<div class="gen-container">
+    <div class="main-page">
+        <div class="icon">
+            <img src="../../../../assets/images/logo.png" height="200" widht="200">
+            <h1>SaveYourMoney</h1>
+        </div>
+        <div class="quote">
+            <ul class="quotes-ul">
+                <li class="quotes-li"><br>{{ 'quotes.Q1' | translate }}</li>
+                <li class="quotes-li">{{ 'quotes.Q2' | translate }}</li>
+                <li class="quotes-li">{{ 'quotes.Q3' | translate }}</li>
+                <li class="quotes-li">{{ 'quotes.Q4' | translate }}</li>
+                <li class="quotes-li">{{ 'quotes.Q5' | translate }}</li>
+                <li class="quotes-li">{{ 'quotes.Q6' | translate }}</li>
+            </ul>
+        </div>
+        <div class="buttons">
+            <div class="sign-up-button">
+                <button (click)="sendToParent(2)" class="button-17 button-colored" role="button">{{'buttons.BT1' | translate}}</button>
+            </div>
+            <div class="login-button">
+                <button (click)="sendToParent(1)" class="button-17" role="button">{{'buttons.BT2' | translate}}</button>
+            </div> 
+        </div> 
+    </div>
+</div>

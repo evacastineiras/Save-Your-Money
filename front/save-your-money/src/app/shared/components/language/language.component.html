@@ -1,0 +1,20 @@
+<div class="lan-container">
+    <div class="lan-icon">
+        <div class="dropdown" id="dropdown-lan2" (click)="showLan()">
+            <span class="material-symbols-outlined" style="font-size: 32px; font-weight: 300;">
+            language
+            </span>
+            <span class="material-symbols-outlined material-symbols-outlined-b">
+                expand_more
+            </span>
+        </div>
+        <div *ngIf= "toggle == true" class="dropdown-lan-container" id="lista">
+             <ul class="dropdown-lan" >
+                <li class="lan-li" (click)="changeLan('eng')"><a ><img src="../../../../assets/images/uk.png" class="img-lan"></a></li>
+                <li class="lan-li" (click)="changeLan('spa')"><a><img src="../../../../assets/images/spain.png" class="img-lan"></a></li>
+                <li class="lan-li" (click)="changeLan('gal')"><a><img src="../../../../assets/images/gal.png" class="img-lan"></a></li>
+            </ul>
+        </div>
+       
+    </div>
+</div>

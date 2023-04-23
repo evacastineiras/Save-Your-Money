@@ -1,0 +1,24 @@
+{
+    "quotes" : {
+        "Q1": "Crece, construye, ahorra",
+        "Q2" : "No es tu salario lo que te hace rico, son tus hábitos de gasto.",
+        "Q3" : "No ahorres lo que no gastas, gasta lo que no ahorres - Warren Buffet",
+        "Q4" : "Ahorrar dinero no es sólo mantenerlo, es saber cómo gastarlo",
+        "Q5" : "Debes controlar tu dinero o la falta del mismo te controlará siempre - Dave Ramsey",
+        "Q6" : "Ser un consumidor inteligente es el primer paso para ser rico - Mark Cuban."
+    },
+
+    "buttons" : {
+        "BT1" : "Nueva cuenta",
+        "BT2" : "Entrar"
+    },
+
+    "inputs" : {
+        "mail" : "Correo",
+        "password" : "Contraseña",
+        "remember" : "Recuerdame",
+        "forgot" : "Olvidaste tu contrseña?"
+    }
+
+
+}

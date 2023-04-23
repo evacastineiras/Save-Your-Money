@@ -1,0 +1,22 @@
+{
+    "quotes" : {
+        "Q1": "Medra, constrúe, aforra",
+        "Q2" : "Non é o teu salario o que te fai rico, son os tus hábitos de gasto.",
+        "Q3" : "Non aforres o que non gastas, gasta o que non aforras - Warren Buffett",
+        "Q4" : "Aforrar diñeiro non é só mantelo, é saber como gastalo",
+        "Q5" : "Debes controlar o teu diñeiro ou a falta do mesmo contolarate sempre - Dave Ramsey",
+        "Q6" : "Ser un consumidor intelixente é o primeiro paso para ser rico - Mark Cuban."
+    },
+
+    "buttons" : {
+        "BT1" : "Nova conta",
+        "BT2" : "Entrar"
+    },
+
+    "inputs" : {
+        "mail" : "Correo",
+        "password" : "Contrasinal",
+        "remember" : "Lembrame",
+        "forgot" : "Esqueciches o teu contrasinal?"
+    }
+}

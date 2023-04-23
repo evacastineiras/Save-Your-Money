@@ -1,0 +1,38 @@
+<div class="main-page">
+    <form id="formulario" method="post" action="/register">
+    <div class="arrow-div">
+        <a><span (click)="sendToParent(0)" class="material-symbols-rounded">arrow_back</span></a>
+    </div>
+    <div class="icon">
+        <img src="../../../../assets/images/logo.png" class="logo-img">
+    </div>
+    <div class="inputs">
+            <div class="name-div">
+                <div class="container" id="input-nombre">      
+                    <div class="webflow-style-input">
+                      <input name="nombre" class="username" type="text" placeholder="Full name">
+                    </div>
+                  </div> 
+            </div>
+            <div class="email-div">
+                <div class="container" id="input-email">      
+                    <div class="webflow-style-input">
+                      <input  name="email" class="email" type="email" placeholder="Email">
+                    </div>
+                  </div> 
+            </div>
+            <div class="password-div">
+                <div class="container" id="input-password">      
+                    <div class="webflow-style-input">
+                      <input  name="password" class="password" type="password" placeholder="Password">
+                    </div>
+                  </div> 
+            </div>
+    </div>
+    <div class="buttons">
+        <div class="sign-up-button">
+            <button type="submit" class="button-17 button-colored" role="button">{{'buttons.BT2' | translate}}</button>
+        </div>
+    </div> 
+</form>
+</div>

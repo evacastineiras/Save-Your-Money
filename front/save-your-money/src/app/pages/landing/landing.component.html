@@ -1,0 +1,11 @@
+<div class="gen-container">
+    <div class="language-container">
+        <app-language></app-language>
+    </div>
+    <div [ngSwitch]="switchValue" class="box-container">
+        <app-landing-page (valueTab)="arrival($event)" *ngSwitchCase="0"></app-landing-page>
+        <app-login (valueTab)="arrival($event)" *ngSwitchCase="1"></app-login>
+        <app-register (valueTab)="arrival($event)" *ngSwitchCase="2"></app-register>
+    </div>
+</div>
+
