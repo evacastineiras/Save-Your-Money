@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class DashboardManagementComponent {
 
+  public varToggle : boolean = false;
+
+  menuToggle(){
+
+    this.varToggle = !this.varToggle;
+  }
 }
