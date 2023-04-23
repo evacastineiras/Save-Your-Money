@@ -20,6 +20,8 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { ForgotComponent } from './pages/forgot/forgot.component';
 import { LandingPageComponent } from './pages/landing/landing-page/landing-page.component';
 import { DashboardManagementComponent } from './pages/dashboard-management/dashboard-management.component';
+import { httpInterceptorProviders } from './helpers/http.interceptor'; 
+import { FormsModule }   from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { DashboardManagementComponent } from './pages/dashboard-management/dashb
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     RouterModule.forRoot([
       {path: 'register', component: RegisterComponent},
@@ -55,7 +58,7 @@ import { DashboardManagementComponent } from './pages/dashboard-management/dashb
         }
     })
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
