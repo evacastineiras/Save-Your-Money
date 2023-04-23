@@ -19,6 +19,7 @@ import { LanguageComponent } from './shared/components/language/language.compone
 import { LandingComponent } from './pages/landing/landing.component';
 import { ForgotComponent } from './pages/forgot/forgot.component';
 import { LandingPageComponent } from './pages/landing/landing-page/landing-page.component';
+import { DashboardManagementComponent } from './pages/dashboard-management/dashboard-management.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { LandingPageComponent } from './pages/landing/landing-page/landing-page.
     LanguageComponent,
     LandingComponent,
     ForgotComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    DashboardManagementComponent
   ],
   imports: [
     BrowserModule,
