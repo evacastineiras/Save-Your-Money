@@ -24,6 +24,9 @@ import { httpInterceptorProviders } from './helpers/http.interceptor';
 import { FormsModule }   from '@angular/forms';
 import { DashboardBoxesComponent } from './pages/dashboard-management/dashboard-boxes/dashboard-boxes.component';
 import { ProfileComponent } from './pages/dashboard-management/profile/profile.component';
+import { ManageSpentComponent } from './pages/dashboard-management/manage-spent/manage-spent.component';
+import { NewSpentComponent } from './pages/dashboard-management/manage-spent/new-spent/new-spent.component';
+import { DeleteSpentComponent } from './pages/dashboard-management/manage-spent/delete-spent/delete-spent.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { ProfileComponent } from './pages/dashboard-management/profile/profile.c
     LandingPageComponent,
     DashboardManagementComponent,
     DashboardBoxesComponent,
-    ProfileComponent
+    ProfileComponent,
+    ManageSpentComponent,
+    NewSpentComponent,
+    DeleteSpentComponent
   ],
   imports: [
     BrowserModule,

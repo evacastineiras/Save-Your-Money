@@ -3,12 +3,13 @@ const ObjectId = require('mongoose').Types.ObjectId;
 
 // Create and Save a new Spent
 exports.createSpent = (req, res) => {
+  let owner_id = new ObjectId(req.userId);
   const spent = new Spent({
     name: req.body.name,
     price: req.body.price,
     category: req.body.category,
-    date: Date, default: Date.now(),
-    owner: req.body.userId,
+    date: new Date(Date.now()),
+    owner: owner_id,
   });
   spent
     .save()
@@ -23,7 +24,7 @@ exports.createSpent = (req, res) => {
     });
 };
 
-// Retrieve all spents from the database.
+// Retrieve all user spents from the database.
 exports.findAllSpents = (req, res) => {
   let owner_id = new ObjectId(req.userId);
   console.log(req.userId)
@@ -70,7 +71,7 @@ exports.updateSpent = (req, res) => {
         name: req.body.name,
         price: req.body.price,
         category: req.body.category,
-        date: Date, default: Date.now(),
+        date: new Date(Date.now()),
         owner: req.body.userId,
     },
     { new: true }

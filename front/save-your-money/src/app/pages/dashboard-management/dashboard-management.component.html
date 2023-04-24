@@ -55,6 +55,7 @@
             }
         </script>
         <div class="main-container">
+            <app-manage-spent *ngIf="newSpent"></app-manage-spent>
                 <div class="welcome">
                     <h2>Welcome, Paquito</h2>
                 </div>
@@ -95,7 +96,8 @@
                         </span>
                     </div>
                 </div>
-            </div> <!--FINAL STATS CONTAINER------------------------------------------------>
+            </div> 
+            <!--FINAL STATS CONTAINER------------------------------------------------>
             <div class="graphic-container">
                 <div class="barras-container">
                     <canvas class="barras" id="barras" width="300" height="300"></canvas>
@@ -112,7 +114,7 @@
                         <button class="button-17" role="button">View All</button>
                     </div>
                     <div class="new-spend">
-                        <span class="material-symbols-outlined add-button" id="add-button" style="font-size: 38px">
+                        <span (click)="createSpent()" class="material-symbols-outlined add-button" id="add-button" style="font-size: 38px">
                             add_circle
                         </span>  
                     </div>

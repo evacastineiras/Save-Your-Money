@@ -1,0 +1,14 @@
+.inputs{
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    margin: 2vh;
+    width: 80%;
+    height: 2vh;
+}
+.buttons{
+    width: 90%;
+    height: 4vh;
+    margin-bottom: 20vh;
+}

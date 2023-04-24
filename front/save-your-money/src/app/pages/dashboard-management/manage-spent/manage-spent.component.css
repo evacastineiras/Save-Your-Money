@@ -1,0 +1,14 @@
+.spent-conatiner{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 40%;
+    top: 20%;
+    background-color: white;
+    height: 25vw;
+    width: 20vw;
+    border-radius: 15px 50px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    align-items: center;
+    justify-content: center;
+}

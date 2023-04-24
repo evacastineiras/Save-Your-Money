@@ -9,8 +9,8 @@ router.get("/get-all-spents",[verifyToken], Spent.findAllSpents);
 
 router.get("/spent/:spentId",[verifyToken], Spent.findOneSpent);
 
-router.put("/spent/:spentId",[verifyToken], Spent.updateSpent);
+router.patch("/update-spent",[verifyToken], Spent.updateSpent);
 
-router.delete("/spent/:spentId",[verifyToken], Spent.deleteSpent);
+router.delete("/delete-spent",[verifyToken], Spent.deleteSpent);
 
 module.exports = router;

@@ -2,19 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-dashboard-management',
-  templateUrl: './dashboard-management.component.html',
-  styleUrls: ['./dashboard-management.component.css']
+  selector: 'app-new-spent',
+  templateUrl: './new-spent.component.html',
+  styleUrls: ['./new-spent.component.css']
 })
-export class DashboardManagementComponent implements OnInit{
+export class NewSpentComponent implements OnInit{
+  form: any = {
+    name: null,
+    price: null,
+    category: null
+  };
   content?: string;
-  public varToggle : boolean = false;
-  newSpent = false
-
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.userService.getUserBoard().subscribe({
+  }
+
+  onSubmit(): void {
+    const { name, price, category } = this.form;
+
+    this.userService.createUserSpent(name, price, category).subscribe({
       next: data => {
         this.content = data;
       },
@@ -26,13 +33,5 @@ export class DashboardManagementComponent implements OnInit{
         }
       }
     });
-  }
-
-  createSpent(){
-    this.newSpent = true
-  }
-
-  menuToggle(){
-    this.varToggle = !this.varToggle;
   }
 }
