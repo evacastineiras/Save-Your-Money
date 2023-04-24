@@ -10,6 +10,7 @@ export class DashboardManagementComponent implements OnInit{
   content?: string;
   public varToggle : boolean = false;
   newSpent = false
+  data = []
 
   constructor(private userService: UserService) { }
 
@@ -17,6 +18,7 @@ export class DashboardManagementComponent implements OnInit{
     this.userService.getUserBoard().subscribe({
       next: data => {
         this.content = data;
+        this.sendData(data)
       },
       error: err => {console.log(err)
         if (err.error) {
@@ -30,6 +32,10 @@ export class DashboardManagementComponent implements OnInit{
 
   createSpent(){
     this.newSpent = true
+  }
+
+  sendData(data: any){
+    this.data = data
   }
 
   menuToggle(){

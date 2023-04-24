@@ -65,6 +65,7 @@ exports.findOneSpent = (req, res) => {
 
 // Update a spent identified by the userId in the request
 exports.updateSpent = (req, res) => {
+  let owner_id = new ObjectId(req.userId);
   App.findByIdAndUpdate(
     req.params.spentId,
     {
@@ -72,7 +73,7 @@ exports.updateSpent = (req, res) => {
         price: req.body.price,
         category: req.body.category,
         date: new Date(Date.now()),
-        owner: req.body.userId,
+        owner: owner_id,
     },
     { new: true }
   )

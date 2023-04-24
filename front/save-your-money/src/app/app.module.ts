@@ -27,6 +27,7 @@ import { ProfileComponent } from './pages/dashboard-management/profile/profile.c
 import { ManageSpentComponent } from './pages/dashboard-management/manage-spent/manage-spent.component';
 import { NewSpentComponent } from './pages/dashboard-management/manage-spent/new-spent/new-spent.component';
 import { DeleteSpentComponent } from './pages/dashboard-management/manage-spent/delete-spent/delete-spent.component';
+import { ListSpentsComponent } from './pages/dashboard-management/manage-spent/list-spents/list-spents.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { DeleteSpentComponent } from './pages/dashboard-management/manage-spent/
     ProfileComponent,
     ManageSpentComponent,
     NewSpentComponent,
-    DeleteSpentComponent
+    DeleteSpentComponent,
+    ListSpentsComponent
   ],
   imports: [
     BrowserModule,
