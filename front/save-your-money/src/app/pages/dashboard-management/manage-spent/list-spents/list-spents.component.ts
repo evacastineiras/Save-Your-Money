@@ -13,4 +13,11 @@ export class ListSpentsComponent implements OnInit{
   ngOnInit(): void {
     console.log(this.spents)
   }
+
+  deleteItem(itemId : any){
+    console.log(itemId)
+  }
+  updateItem(itemId : any){
+    console.log(itemId)
+  }
 }

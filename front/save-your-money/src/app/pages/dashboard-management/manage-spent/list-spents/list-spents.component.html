@@ -1,1 +1,20 @@
-<p>list-spents works!</p>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Date</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let spent of spents">
+            <td>{{spent.name}}</td>
+            <td>{{spent.price}}</td>
+            <td>{{spent.date}}</td>
+            <td>{{spent.category}}</td>
+            <td><a><span (click)="deleteItem(spent._id)" class="material-symbols-rounded">delete</span></a></td>
+            <td><a><span (click)="updateItem(spent._id)" class="material-symbols-rounded">edit</span></a></td>
+        </tr>
+    </tbody>
+</table>
