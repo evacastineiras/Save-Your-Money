@@ -1,24 +1,29 @@
-<form name="form" id="formulario" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-    <div class="inputs">
-        <div class="container">      
-            <div class="webflow-style-input">
-              <input name="name" class="name" type="text" placeholder="Name" [(ngModel)]="form.name" #email="ngModel" required>
-            </div>
-          </div> 
-        <div class="container">      
-            <div class="webflow-style-input">
-              <input name="price" class="price" type="text" placeholder="Price" [(ngModel)]="form.price" #price="ngModel" required>
-            </div>
-          </div> 
-        <div class="container">      
-            <div class="webflow-style-input">
-              <input name="category" class="category" type="text" placeholder="Category" [(ngModel)]="form.category" #category="ngModel" required>
+<div class="pop-up-conatainer">
+    <div class="arrow-div">
+        <a><span (click)="closeNew()"class="material-symbols-rounded">close</span></a>
+    </div>
+    <form name="form" id="formulario" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <div class="inputs">
+            <div class="container top-container">      
+                <div class="webflow-style-input">
+                  <input name="name" class="name" type="text" placeholder="Name" [(ngModel)]="form.name" #email="ngModel" required>
+                </div>
+              </div> 
+            <div class="container">      
+                <div class="webflow-style-input">
+                  <input name="price" class="price" type="text" placeholder="Price" [(ngModel)]="form.price" #price="ngModel" required>
+                </div>
+              </div> 
+            <div class="container">      
+                <div class="webflow-style-input">
+                  <input name="category" class="category" type="text" placeholder="Category" [(ngModel)]="form.category" #category="ngModel" required>
+                </div>
+            </div> 
+        </div>
+        <div class="buttons">
+            <div class="sign-up-button">
+                <button type="submit" class="button-17 button-colored" role="button">{{'buttons.BT2' | translate}}</button>
             </div>
         </div> 
-    </div>
-    <div class="buttons">
-        <div class="sign-up-button">
-            <button type="submit" class="button-17 button-colored" role="button">{{'buttons.BT2' | translate}}</button>
-        </div>
-    </div> 
-</form>
+    </form>
+</div>

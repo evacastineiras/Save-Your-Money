@@ -12,10 +12,16 @@ export class NewSpentComponent implements OnInit{
     price: null,
     category: null
   };
+
+  closed = false
   content?: string;
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+  }
+
+  closeNew(){
+    this.closed = true
   }
 
   onSubmit(): void {
@@ -34,4 +40,5 @@ export class NewSpentComponent implements OnInit{
       }
     });
   }
+  
 }
