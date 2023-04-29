@@ -1,5 +1,6 @@
 const config = require("../config/auth.config");
 const User = require("../models/user.model");
+const Email = require("../services/email")
 
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
@@ -61,6 +62,41 @@ exports.signin = (req, res) => {
       });
     });
 };
+
+exports.forgot = (req,res)=>{
+  const {email} = req.body
+  if (!email) {
+    res.status(404).send(
+      "Email sent is null"
+    )
+  }else{
+    User.findOne({ email: email }).then((user) => {
+      if (user) {
+        let password = randomWords({ exactly: 2, join: ' ' })
+        Email.sendEmail(email, password)
+
+        //Password Hashing
+        bcrypt.genSalt(10, (err, salt) =>
+          bcrypt.hashSync(password, salt, (err, hash) => {
+            if (err) throw err
+            password = hash
+            User
+              .updateOne({email: email}, {password: password})
+              .then(res.status(200).send(
+                "Please check your email"
+              ))
+              .catch((err) => console.log(err))
+          })
+        )
+        
+      } else {
+        res.status(404).send(
+          "Email doesn't exist"
+        )
+      }
+  })
+  }
+}
 
 exports.signout = async (req, res) => {
   try {
