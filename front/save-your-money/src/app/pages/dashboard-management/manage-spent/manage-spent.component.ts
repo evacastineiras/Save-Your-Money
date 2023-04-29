@@ -14,7 +14,8 @@ export class ManageSpentComponent implements OnInit {
   data = []
   check  = false
   totalValue = 0
-  userData = []
+  userData : any
+  userName = ""
   updateSpent: any
   updateCheck = false
 
@@ -28,6 +29,7 @@ export class ManageSpentComponent implements OnInit {
         this.data = data;
         this.check = true
         this.totalSpent(data)
+        this.getUserInfo()
       },
       error: err => {console.log(err)
         if (err.error) {
@@ -58,7 +60,7 @@ export class ManageSpentComponent implements OnInit {
   }
   getUserInfo(){
     this.userData = this.storageService.getUser();
-    console.log(this.storageService.getUser())
+    this.userName = this.userData.fullname
   }
   updateItemList(newItem: any){
     this.updateSpent = newItem
