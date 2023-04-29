@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -16,6 +16,7 @@ export class UpdateSpentComponent implements OnInit {
   displayName = ""
   displayPrice = ""
   displayCategory = ""
+  @Output() reloadPrent = new EventEmitter<any>();
 
 
 
@@ -51,6 +52,7 @@ export class UpdateSpentComponent implements OnInit {
     this.userService.updateUserSpent(this.updateItemInfo.itemId, name, price, category).subscribe({
       next: data => {
         this.content = data;
+        this.reloadPrent.emit(true)
       },
       error: err => {console.log(err)
         if (err.error) {

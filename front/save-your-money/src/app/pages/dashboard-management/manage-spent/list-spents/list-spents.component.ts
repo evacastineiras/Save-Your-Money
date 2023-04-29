@@ -12,6 +12,7 @@ export class ListSpentsComponent implements OnInit{
   itemToDelete = false
   @Output() newItemEvent = new EventEmitter<any>();
   @Output() popUpdate = new EventEmitter<any>();
+  @Output() reloadPrent = new EventEmitter<any>();
   
   constructor(private userService: UserService) { }
 
@@ -20,10 +21,10 @@ export class ListSpentsComponent implements OnInit{
   }
 
   deleteItem(itemId : any){
-    console.log("Deleted item: "+ itemId)
     this.userService.deleteUserSpent(itemId).subscribe({
       next: data => {
         this.content = data;
+        this.reloadPrent.emit(true)
       },
       error: err => {console.log(err)
         if (err.error) {
@@ -33,7 +34,6 @@ export class ListSpentsComponent implements OnInit{
         }
       }
     });
-    this.ngOnInit()
   }
   updateItem(itemId : any, name : any, price : any, category : any){
     let data = {

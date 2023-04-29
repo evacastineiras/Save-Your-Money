@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -12,6 +12,8 @@ export class NewSpentComponent implements OnInit{
     price: null,
     category: null
   };
+  @Output() reloadPrent = new EventEmitter<any>();
+
 
   closed = false
   content?: string;
@@ -30,6 +32,7 @@ export class NewSpentComponent implements OnInit{
     this.userService.createUserSpent(name, price, category).subscribe({
       next: data => {
         this.content = data;
+        this.reloadPrent.emit(true)
       },
       error: err => {console.log(err)
         if (err.error) {

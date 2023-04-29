@@ -63,8 +63,8 @@
             </div>
         </div>
     <div class="list-container" *ngIf="check">
-        <app-list-spents (newItemEvent)="updateItemList($event)" (popUpdate)="updateSpentCheck($event)" [spents]=data ></app-list-spents>
+        <app-list-spents (newItemEvent)="updateItemList($event)" (popUpdate)="updateSpentCheck($event)" (reloadPrent)="reloadChilds($event)" [spents]=data ></app-list-spents>
     </div>
-    <app-new-spent *ngIf="newSpent"></app-new-spent>
-    <app-update-spent [updateItemInfo]=updateSpent *ngIf="updateCheck"></app-update-spent>
+    <app-new-spent *ngIf="newSpent" (reloadPrent)="reloadChilds($event)"></app-new-spent>
+    <app-update-spent [updateItemInfo]=updateSpent (reloadPrent)="reloadChilds($event)" *ngIf="updateCheck"></app-update-spent>
 </div>

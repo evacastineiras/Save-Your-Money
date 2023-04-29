@@ -63,5 +63,10 @@ export class ManageSpentComponent implements OnInit {
   updateItemList(newItem: any){
     this.updateSpent = newItem
   }
+  reloadChilds(upd: any){
+    this.ngOnInit()
+    this.newSpent = false
+    this.updateCheck = false
+  }
 
 }
