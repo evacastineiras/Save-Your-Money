@@ -25,6 +25,16 @@ export class AuthService {
     );
   }
 
+  forgot(email: string): Observable<any> {
+    return this.http.post(
+      AUTH_API + 'forgot',
+      {
+        email,
+      },
+      httpOptions
+    );
+  }
+
   register(fullname: string, email: string, password: string): Observable<any> {
     return this.http.post(
       AUTH_API + 'signup',

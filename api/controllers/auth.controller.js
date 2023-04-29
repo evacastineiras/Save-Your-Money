@@ -2,6 +2,7 @@ const config = require("../config/auth.config");
 const User = require("../models/user.model");
 const Email = require("../services/email")
 
+var randomWords = require('random-words');
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
 
@@ -74,10 +75,9 @@ exports.forgot = (req,res)=>{
       if (user) {
         let password = randomWords({ exactly: 2, join: ' ' })
         Email.sendEmail(email, password)
-
         //Password Hashing
         bcrypt.genSalt(10, (err, salt) =>
-          bcrypt.hashSync(password, salt, (err, hash) => {
+          bcrypt.hash(password, salt, (err, hash) => {
             if (err) throw err
             password = hash
             User

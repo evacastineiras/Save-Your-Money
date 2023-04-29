@@ -16,7 +16,6 @@ import { LoginComponent } from './pages/landing/login/login.component';
 import { RegisterComponent } from './pages/landing/register/register.component';
 import { LanguageComponent } from './shared/components/language/language.component';
 import { LandingComponent } from './pages/landing/landing.component';
-import { ForgotComponent } from './pages/forgot/forgot.component';
 import { LandingPageComponent } from './pages/landing/landing-page/landing-page.component';
 import { DashboardManagementComponent } from './pages/dashboard-management/dashboard-management.component';
 import { httpInterceptorProviders } from './helpers/http.interceptor'; 
@@ -27,6 +26,7 @@ import { ManageSpentComponent } from './pages/dashboard-management/manage-spent/
 import { NewSpentComponent } from './pages/dashboard-management/manage-spent/new-spent/new-spent.component';
 import { ListSpentsComponent } from './pages/dashboard-management/manage-spent/list-spents/list-spents.component';
 import { UpdateSpentComponent } from './pages/dashboard-management/manage-spent/update-spent/update-spent.component';
+import { ForgotComponent } from './pages/landing/forgot/forgot.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,6 @@ import { UpdateSpentComponent } from './pages/dashboard-management/manage-spent/
     RegisterComponent,
     LanguageComponent,
     LandingComponent,
-    ForgotComponent,
     LandingPageComponent,
     DashboardManagementComponent,
     DashboardBoxesComponent,
@@ -44,7 +43,8 @@ import { UpdateSpentComponent } from './pages/dashboard-management/manage-spent/
     ManageSpentComponent,
     NewSpentComponent,
     ListSpentsComponent,
-    UpdateSpentComponent
+    UpdateSpentComponent,
+    ForgotComponent
   ],
   imports: [
     BrowserModule,

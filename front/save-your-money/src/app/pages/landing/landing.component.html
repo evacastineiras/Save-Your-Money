@@ -6,6 +6,7 @@
         <app-landing-page (valueTab)="arrival($event)" *ngSwitchCase="0"></app-landing-page>
         <app-login (onLogin)="changeLogin($event)" (valueTab)="arrival($event)" *ngSwitchCase="1"></app-login>
         <app-register (valueTab)="arrival($event)" *ngSwitchCase="2"></app-register>
+        <app-forgot (valueTab)="arrival($event)" *ngSwitchCase="3"></app-forgot>
     </div>
 </div>
 
