@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { StorageService } from 'src/app/services/storage.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -13,8 +14,12 @@ export class ManageSpentComponent implements OnInit {
   data = []
   check  = false
   totalValue = 0
+  userData = []
+  updateSpent: any
+  updateCheck = false
 
-  constructor(private userService: UserService) { }
+
+  constructor(private userService: UserService, private storageService: StorageService) { }
 
   ngOnInit(): void {
     this.userService.getUserBoard().subscribe({
@@ -39,6 +44,10 @@ export class ManageSpentComponent implements OnInit {
   createSpent(){
     this.newSpent = true
   }
+  updateSpentCheck(upd: any){
+    this.updateCheck = true
+    console.log(this.updateCheck)
+  }
 
   totalSpent(data: any){
     let total = 0
@@ -47,4 +56,12 @@ export class ManageSpentComponent implements OnInit {
     }
     this.totalValue = total
   }
+  getUserInfo(){
+    this.userData = this.storageService.getUser();
+    console.log(this.storageService.getUser())
+  }
+  updateItemList(newItem: any){
+    this.updateSpent = newItem
+  }
+
 }

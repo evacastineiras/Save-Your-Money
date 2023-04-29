@@ -43,6 +43,7 @@ app.use(
 
 const spentRouter = require("./routes/spent.routes.js")
 const userRouter = require("./routes/user.routes.js")
+const authRouter = require("./routes/auth.routes.js")
 
 
 /* ROUTING */
@@ -50,6 +51,7 @@ require('./routes/auth.routes.js')(app);
 
 app.use(process.env.VERSION, spentRouter)
 app.use(process.env.VERSION, userRouter)
+app.use(process.env.VERSION, authRouter)
 
 
 

@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit{
         this.isLoginFailed = true;
       }
     });
+    console.log(this.storageService.getUser())
   }
     setLogin(){
        this.onLogin.emit(true);

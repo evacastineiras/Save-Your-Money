@@ -14,7 +14,7 @@
             <td>{{spent.date}}</td>
             <td>{{spent.category}}</td>
             <td><a><span (click)="deleteItem(spent._id)" class="material-symbols-rounded">delete</span></a></td>
-            <td><a><span (click)="updateItem(spent._id)" class="material-symbols-rounded">edit</span></a></td>
+            <td><a><span (click)="updateItem(spent._id, spent.name, spent.price, spent.category)" class="material-symbols-rounded">edit</span></a></td>
         </tr>
     </tbody>
 </table>

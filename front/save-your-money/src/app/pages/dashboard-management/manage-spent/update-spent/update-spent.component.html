@@ -1,0 +1,29 @@
+<div class="pop-up-conatainer">
+    <div class="arrow-div">
+        <a><span (click)="closeNew()"class="material-symbols-rounded">close</span></a>
+    </div>
+    <form name="form" id="formulario" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <div class="inputs">
+            <div class="container top-container">      
+                <div class="webflow-style-input">
+                  <input name="name" class="name" type="text" placeholder="{{displayName}}" [(ngModel)]="form.name" #email="ngModel">
+                </div>
+              </div> 
+            <div class="container">      
+                <div class="webflow-style-input">
+                  <input name="price" class="price" type="text" placeholder="{{displayPrice}}" [(ngModel)]="form.price" #price="ngModel">
+                </div>
+              </div> 
+            <div class="container">      
+                <div class="webflow-style-input">
+                  <input name="category" class="category" type="text" placeholder="{{displayCategory}}" [(ngModel)]="form.category" #category="ngModel">
+                </div>
+            </div> 
+        </div>
+        <div class="buttons">
+            <div class="sign-up-button">
+                <button type="submit" class="button-17 button-colored" role="button">{{'buttons.BT2' | translate}}</button>
+            </div>
+        </div> 
+    </form>
+</div>

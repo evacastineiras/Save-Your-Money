@@ -31,7 +31,7 @@ export class UserService {
     let httpParams = new HttpParams().set('spentId', spentId);
     let options = { params: httpParams };
     return this.http.delete(
-        API_URL + 'delete-spent',options
+        API_URL + 'delete-spent', options
     );
   }
   updateUserSpent(spentId: any, name: string, price: Number, category: string): Observable<any> {

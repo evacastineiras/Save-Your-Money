@@ -26,8 +26,8 @@ import { DashboardBoxesComponent } from './pages/dashboard-management/dashboard-
 import { ProfileComponent } from './pages/dashboard-management/profile/profile.component';
 import { ManageSpentComponent } from './pages/dashboard-management/manage-spent/manage-spent.component';
 import { NewSpentComponent } from './pages/dashboard-management/manage-spent/new-spent/new-spent.component';
-import { DeleteSpentComponent } from './pages/dashboard-management/manage-spent/delete-spent/delete-spent.component';
 import { ListSpentsComponent } from './pages/dashboard-management/manage-spent/list-spents/list-spents.component';
+import { UpdateSpentComponent } from './pages/dashboard-management/manage-spent/update-spent/update-spent.component';
 
 @NgModule({
   declarations: [
@@ -45,8 +45,8 @@ import { ListSpentsComponent } from './pages/dashboard-management/manage-spent/l
     ProfileComponent,
     ManageSpentComponent,
     NewSpentComponent,
-    DeleteSpentComponent,
-    ListSpentsComponent
+    ListSpentsComponent,
+    UpdateSpentComponent
   ],
   imports: [
     BrowserModule,

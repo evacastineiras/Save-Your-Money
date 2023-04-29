@@ -66,8 +66,9 @@ exports.findOneSpent = (req, res) => {
 // Update a spent identified by the userId in the request
 exports.updateSpent = (req, res) => {
   let owner_id = new ObjectId(req.userId);
-  App.findByIdAndUpdate(
-    req.params.spentId,
+  console.log(req.body)
+  Spent.findByIdAndUpdate(
+    req.body.spentId,
     {
         name: req.body.name,
         price: req.body.price,
@@ -99,7 +100,7 @@ exports.updateSpent = (req, res) => {
 
 // Delete a spent with the specified userId in the request
 exports.deleteSpent = (req, res) => {
-  App.findByIdAndRemove(req.params.spentId)
+  Spent.findByIdAndRemove(req.query.spentId)
     .then((data) => {
       if (!data) {
         return res.status(404).send({
