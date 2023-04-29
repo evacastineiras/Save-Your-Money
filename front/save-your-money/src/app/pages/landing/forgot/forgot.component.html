@@ -1,0 +1,41 @@
+<div class="main-page">
+    <form *ngIf="!isLoggedIn" name="form" id="formulario" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+    <div class="arrow-div">
+        <a><span (click)="sendToParent(0)"class="material-symbols-rounded">arrow_back</span></a>
+    </div>
+    <div class="icon">
+        <img src="../../../../assets/images/logo.png" class="logo-img">
+    </div>
+    <div class="inputs">
+            <div class="email-div">
+                <div class="container">      
+                    <div class="webflow-style-input">
+                      <input name="email" class="email" type="email" placeholder="Email" [(ngModel)]="form.email" #email="ngModel" required>
+                    </div>
+                  </div> 
+            </div>
+            <div class="password-div">
+                <div class="container">      
+                    <div class="webflow-style-input">
+                      <input name="password" class="password" type="password" placeholder="Password" [(ngModel)]="form.password" minlength="6" #password="ngModel" required>
+                    </div>
+                  </div> 
+            </div>
+    </div>
+    <div class="box">
+        <div class="checkbox-div">
+            <input type="checkbox" class="checkbox">
+            <label for="checkbox">{{'inputs.remember' | translate}}</label>
+        </div>
+        <div class="forgot">
+            <a>{{'inputs.forgot' | translate}}</a>
+        </div>
+        
+    </div>
+    <div class="buttons">
+        <div class="sign-up-button">
+            <button type="submit" class="button-17 button-colored" role="button">{{'buttons.BT2' | translate}}</button>
+        </div>
+    </div> 
+    </form>
+</div>

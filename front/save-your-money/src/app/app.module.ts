@@ -12,7 +12,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './shared/components/menu/menu.component';
 import { RouterModule } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/landing/login/login.component';
 import { RegisterComponent } from './pages/landing/register/register.component';
 import { LanguageComponent } from './shared/components/language/language.component';
@@ -33,7 +32,6 @@ import { UpdateSpentComponent } from './pages/dashboard-management/manage-spent/
   declarations: [
     AppComponent,
     MenuComponent,
-    HomeComponent,
     LoginComponent,
     RegisterComponent,
     LanguageComponent,
